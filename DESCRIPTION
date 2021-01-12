@@ -2,12 +2,14 @@ Package: fastqR
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Nicole",
+           family = "Major",
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Package that reads and manipulated fastq format sequence files, 
+             which are produced by most DNA sequencers and they contain both base
+             calls and associated quality scores for multiple sequences.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
