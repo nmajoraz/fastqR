@@ -10,9 +10,14 @@ Authors@R:
 Description: Package that reads and manipulated fastq format sequence files, 
              which are produced by most DNA sequencers and they contain both base
              calls and associated quality scores for multiple sequences.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    assertthat,
+    stringr,
+    tibble
+Depends: 
+    magrittr
