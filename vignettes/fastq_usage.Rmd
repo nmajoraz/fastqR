@@ -17,3 +17,31 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(fastqR)
 ```
+
+This is a short document to demonstrate the usage of the ```fastqR``` package.  The main functions of the package are laid out below:
+
+Parsing FastQ files
+===================
+
+You can parse a fastq file as shown below:
+
+```{r}
+read_fastq(system.file("good.fq", package = "fastqR")) -> fastq_data
+fastq_data
+```
+
+You can also manually do a calculation of GC content
+
+```{r}
+gc_content(c("GATCGCGATGCTATGCGTATGCG","TAGTATTGCTATTATATGATTA"))
+```
+
+
+Decoding of encoded Phred scores
+================================
+
+The quality scores in a fastq file are encoded Phred scores.  We have a function which can decode them.
+
+```{r}
+decode_qualities(fastq_data$Qualities[1])
+```
