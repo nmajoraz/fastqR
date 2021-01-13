@@ -1,3 +1,14 @@
+#' Converts quality values to Phred score
+#'
+#' Converts a scalar string of quality values into a vector of Phred scores.
+#'
+#' @param qualities A character vector of qualities
+#' @param offset Must be a value of 33 or 64
+#'
+#' @return A vector of Phred scores
+#' @export
+#'
+#' @examples decode_qualities("???#;ABAAAH")
 decode_qualities <- function(qualities, offset = 33){
   assertthat::assert_that(assertthat::is.scalar(offset))
   assertthat::assert_that(assertthat::is.number(offset))

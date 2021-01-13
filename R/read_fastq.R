@@ -1,3 +1,14 @@
+#' % of GC values in a DNA sequence
+#'
+#' Provides the percentage of bases with values of G or C in a DNA sequence.
+#'
+#' @param seq A vector of DNA sequence strings
+#'
+#' @return Percentage of bases that are G or C as a vector.
+#' @export
+#'
+#' @examples
+#' gc_content("GAGAGCGGCTT")
 gc_content <- function(seq){
   if (base::is.character(seq)){
     seq <- base::toupper(seq)
@@ -13,7 +24,22 @@ gc_content <- function(seq){
   }
 }
 
-# Write read_fastq
+
+#' Reads fastq file and puts into tibble
+#'
+#' Reads a fastq file and puts into a tibble with one row per fastq entry.
+#'
+#' @param file The fastq file to read from. Requires extension of .fq.
+#'
+#' @return A tibble with 4 columns. \cr
+#'         1) ID: The sequence from the first line minus the "@" \cr
+#'         2) Bases: The bases from the second line \cr
+#'         3) Qualities: The quality string from the fourth line \cr
+#'         4) GC: The GC content of the bases \cr
+#' @export
+#'
+#' @examples
+#' read_fastq(system.file("good.fq", package = "fastqR"))
 read_fastq <- function(file){
   assertthat::assert_that(assertthat::is.readable(file))
   assertthat::assert_that(assertthat::has_extension(file, "fq"))
